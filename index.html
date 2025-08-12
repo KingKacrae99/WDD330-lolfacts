@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Lolfacts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="logo">Lolfacts</div>
+        <div class="controls">
+            <button id="get-fact-btn" class="btn btn-primary">Get Fact</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="main-area">
+            <div class="fact-card" id="fact-card" aria-live="polite">
+                <p id="fact-text" class="fact-text">Click “Get Fact” to start — or press "Another".</p>
+                <div id="fact-meta" class="fact-meta"></div>
+                <div class="fact-actions">
+                    <button id="save-fact-btn" class="btn btn-secondary">Save</button>
+                    <button id="share-fact-btn" class="btn btn-outline">Share</button>
+                    <button id="new-fact-btn" class="btn btn-primary">Another</button>
+                </div>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <h3>Saved Facts</h3>
+            <ul id="favorites-list" class="favorites-list"></ul>
+        </aside>
+    </main>
+
+    <script type="module" src="/scripts/main.js"></script>
+</body>
+
+</html>
