@@ -2,42 +2,102 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Lolfacts</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>L😂lfacts</title>
+    <meta name="description" content="Lolfacts aim is to solve boredom, giving something fun & quirky for user to read when they are bored.">
+    <meta name="author" content="King Emmanuel Aguomba">
+    <link rel="icon" type="image/png" href="images/lolfact-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
-    <script type="module" src="scripts/main.js" defer></script>
-</head>
 
-<body>
+    <meta property="og:title" content="Lolfacts">
+    <meta property="og:description" content="An web app that generate random useless fact to keep user entertain while indirectly try to educate user with weird and funny facts">
+    <meta property="og:url" content="https://kingkacrae99.github.io/WDD330-lolfacts/">
+    <meta property="og:locale" content="en_US">
+    <script type="module" src="scripts/main.js"></script>
+</head>
+    <div id="offline" class="offline hidden">You're offline. Some features may not work.</div>
     <header class="topbar">
-        <div class="logo">Lolfacts</div>
-        <div class="controls">
-            <button id="get-fact-btn" class="btn btn-primary">Get Fact</button>
+        <div class="brand">L😂lfacts</div>
+        <div class="top-actions">
+            <label class="switch">
+                <input id="theme-toggle" type="checkbox">
+                <span class="slider"></span>
+            </label>
+            <button id="btn-new-fact" class="btn primary">New Fact</button>
+            <button id="btn-new-joke" class="btn secondary">New Joke</button>
         </div>
     </header>
 
-    <main class="container">
-        <section class="main-area">
-            <div class="fact-card" id="fact-card" aria-live="polite">
-                <p id="fact-text" class="fact-text">Click “Get Fact” to start — or press "Another".</p>
-                <div id="fact-meta" class="fact-meta"></div>
-                <div class="fact-actions">
-                    <button id="save-fact-btn" class="btn btn-secondary">Save</button>
-                    <button id="share-fact-btn" class="btn btn-outline">Share</button>
-                    <button id="new-fact-btn" class="btn btn-primary">Another</button>
+    <main class="layout">
+        <section class="card " id="card">
+            <div class="card-inner" id="card-inner">
+                <!-- front flip = FACT -->
+                <div class="card-face card-front">
+                    <div class="tag">FACT</div>
+                    <div id="fact-text" class="content">Click “New Fact”</div>
+                    <div id="fact-meta" class="meta"></div>
+                    <div class="actions">
+                        <button id="btn-save-fact" class="btn secondary">Save</button>
+                        <button id="btn-share-fact" class="btn outline">Share</button>
+                    </div>
+                </div>
+
+                <!-- back flip = JOKE -->
+                <div class="card-face card-back">
+                    <div class="top-row">
+                        <div class="tag">JOKE</div>
+                        <select id="joke-category" class="select">
+                            <option value="Any">Any</option>
+                            <option value="Programming">Programming</option>
+                        </select>
+                    </div>
+                    <div id="joke-text" class="content">Click “New Joke”</div>
+                    <div id="joke-meta" class="meta"></div>
+                    <div class="actions">
+                        <button id="btn-save-joke" class="btn secondary">Save</button>
+                        <button id="btn-share-joke" class="btn outline">Share</button>
+                    </div>
                 </div>
             </div>
+            <div id="skeleton" class="skeleton hidden"></div>
         </section>
 
         <aside class="sidebar">
-            <h3>Saved Facts</h3>
-            <ul id="favorites-list" class="favorites-list"></ul>
+            <div class="panel">
+                <div class="panel-header">
+                    <h3>Saved</h3>
+                    <input id="search" class="search" placeholder="Search saved…">
+                </div>
+                <ul id="favorites" class="list"></ul>
+            </div>
+
+            <div class="panel">
+                <h3>Stats</h3>
+                <ul class="stats">
+                    <li>Facts viewed: <span id="stat-facts">0</span></li>
+                    <li>Jokes viewed: <span id="stat-jokes">0</span></li>
+                    <li>Shared: <span id="stat-shares">0</span></li>
+                </ul>
+            </div>
         </aside>
     </main>
-
+    <hr>
+    <footer>
+        <div class="row w-100">
+            <div class="col-lg-8 col-md-6 col-sm-12 text-center p-2">
+                <p>All rights reserved &copy;<span id="current-year"></span> | Privacy Protected</p>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 text-center p-2">
+                <img src="images/icons8-facebook.svg" alt="facebook">
+                <img src="images/icons8-instagram.svg" alt="instagram">
+                <img src="images/icons8-linkedin.svg" alt="linkedin">
+                <img src="images/icons8-x.svg" alt="X">
+            </div>
+        </div>
+    </footer>
 </body>
-
 </html>
