@@ -370,12 +370,3 @@ body.dark footer img {
     color: #fff;
     background: #f5f5f5;
 }
-
-/*****************************************
-* Media Query
-*****************************************/
-@media screen and (max-width:550px) {
-    .layout{
-        grid-template-columns: 1fr;
-    }
-}

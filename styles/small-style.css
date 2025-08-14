@@ -1,0 +1,21 @@
+/*****************************************
+* Media Query
+*****************************************/
+@media screen and (max-width:550px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .content {
+        font-size: 0.8rem;
+    }
+
+    /****************************
+    * Button
+    ****************************/
+    .btn {
+        padding: 0.31rem 0.44rem;
+        font-weight: 600;
+
+    }
+}
